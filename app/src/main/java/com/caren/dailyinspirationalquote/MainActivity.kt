@@ -15,9 +15,5 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.currentlyDisplayedQuote.observe(this,
             { findViewById<TextView>(R.id.text).text = it?.quote })
-
-        findViewById<Button>(R.id.button).setOnClickListener {
-            viewModel.getNewQuote()
-        }
     }
 }

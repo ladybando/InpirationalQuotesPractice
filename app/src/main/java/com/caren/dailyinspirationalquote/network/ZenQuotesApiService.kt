@@ -6,6 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
+// TODO Fill out the BASE_URL here
 private const val BASE_URL = ""
 
 private val moshi = Moshi.Builder()
