@@ -1,7 +1,7 @@
 # InspirationalQuotesExercise
 ### A small Android project to practice executing network requests and parsing the network response 
 
-This app uses the [ZenQuotes](https://premium.zenquotes.io/zenquotes-documentation/) API to generate an inspirational quote. Note that on a free account, you can only call the API 5 times every 30 seconds.  
+This app uses the [ZenQuotes](https://premium.zenquotes.io/zenquotes-documentation/) API to generate an inspirational quote. Specifically, we will be using the https://zenquotes.io/api/random endpoint. Note that on a free account, you can only call the API 5 times every 30 seconds. Once you've reached that limit, you will no longer receive a valid response.
 
 The app currently doesn't work and requires a few fixes. This exercise takes you through the steps to produce a fully working app as pictured below.
 
