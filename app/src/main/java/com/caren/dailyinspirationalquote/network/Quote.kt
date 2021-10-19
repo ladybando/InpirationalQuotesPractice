@@ -7,9 +7,9 @@ import com.squareup.moshi.Json
  */
 data class Quote(
 
-    val quote: String?,
+    @Json(name="q") val quote: String?,
 
-    val author: String?,
+    @Json(name="a") val author: String?,
 
-    val preformattedHTML: String?,
+    @Json(name="h") val preformattedHTML: String?,
 )

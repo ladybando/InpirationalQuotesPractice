@@ -5,15 +5,36 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.caren.dailyinspirationalquote.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel by viewModels()
+    private lateinit var binding: ActivityMainBinding
+
+    private lateinit var textView: TextView
+    private lateinit var button: Button
+    private lateinit var authorTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        button = binding.button
+        textView = binding.text
+        authorTextView = binding.authorText
 
         viewModel.currentlyDisplayedQuote.observe(this,
-            { findViewById<TextView>(R.id.text).text = it?.quote })
+            { textView.text = it?.quote
+                authorTextView.text = it?.author
+            })
+
+        getNewQuote()
+    }
+
+    private fun getNewQuote() {
+        button.setOnClickListener {
+            viewModel.getNewQuote()
+        }
     }
 }
